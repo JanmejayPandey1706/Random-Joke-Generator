@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Jokes of the day</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Best Jokes to make your day</h3>
+      <div id="joke" class="joke">Awesome Joke is loading...</div>
+      <button id="jokeBtn" class="btn">Next Joke</button>
+    </div>
+    <script>
+        // lets start with javascript 
+      const jokes = document.querySelector('#joke')
+      const jokeBtn = document.querySelector('#jokeBtn')
+
+      const generateJokes = () => {
+        const setHeader = {
+          headers: {
+            Accept: ' Application/json',
+          },
+        }
+
+        fetch('https://icanhazdadjoke.com', setHeader)
+          .then((res) => res.json())
+          .then((data) => {
+            jokes.innerHTML = data.joke
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }
+
+    //   onclick function 
+    
+      jokeBtn.addEventListener('click', generateJokes)
+      generateJokes()
+    </script>
+  </body>
+</html>

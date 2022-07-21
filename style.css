@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #efefef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100vw;
+}
+.container{
+    background-color: #7c9eab;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+.btn{
+    background-color: blue;
+    border-radius: 10px;
+    border-style: none;
+    color: #ffffff;
+    padding: 5px 25px;
+    margin-top: 1rem;
+}
